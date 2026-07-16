@@ -1,4 +1,3 @@
-GIF89a
 <?php
 if (isset($_GET['debug500'])) {
     ini_set('display_errors', 1);
