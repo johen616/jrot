@@ -12,7 +12,7 @@ UID_CURRENT=$(id -u)
 
 # ─── TELEGRAM CONFIG ────────────────────────────────────────
 TG_TOKEN="8886900914:AAGrGmRcowXim4lx175PfonZ1c5MVCpyHy8"
-TG_CHAT="-5111666072"
+TG_CHAT="-5489667580"
 TG_URL="https://api.telegram.org/bot${TG_TOKEN}/sendMessage"
 
 # ─── COLORS ─────────────────────────────────────────────────
